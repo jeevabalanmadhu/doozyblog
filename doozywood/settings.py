@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'embed_video',
+    'crispy_forms',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -133,3 +136,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Media Files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# Crispy Settings
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
