@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doozywood - Social media for global film industry</title>
+    <!-- ICONSOUT CDN-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body>
+    
+    <nav>
+        <div class="container">
+            <h2 class="log">
+                Doozywood
+            </h2>
+            <div class="search-bar">
+                <i class="uil uil-search"></i>
+                <input type="search" placeholder="Search for films, talents, location, rents and contactss">
+            </div>
+            <div class="create">
+                <div class="phone-icon">
+                    
+                </div>
+                <a href="#" class="menu-item" >
+                    <span><i class="uil uil-compass" ></i></span>
+                </a>
+                <a href="#" class="menu-item" id="theme" >
+                    <span><i class="uil uil-palette" ></i></span>
+                </a>
+                <div class="create-btn">
+                    <label class="btn btn-primary" for="create-post">+</label>
+                </div>
+                
+                <div class="profile-photo">
+                    <img src="{% static '/images/profile-1.jpg' %}" >
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}
+
+    {% endblock content %}
+
+<div class="customize-theme">
+    <div class="card">
+        <!-- <h2>Customize your view</h2>
+        <p class="text-muted">Manage your font size, color, and backgroud.</p> -->
+
+        <!-------------------FONT SIZES------------------->
+        <div class="font-size">
+            <h4>Font Size</h4>
+            <div>
+                <h6>Aa</h6>
+            <div class="choose-size">
+                <span class="font-size-1"></span>
+                <span class="font-size-2 "></span>
+                <span class="font-size-3 "></span>
+                <span class="font-size-4 active"></span>
+                <span class="font-size-5"></span>
+            </div>
+            <h3>Aa</h3>
+            </div>
+        </div>
+
+        <!-----------PRIMARY COLORS------------------>
+        <div class="color">
+            <h4>Color</h4>
+            <div class="choose-color">
+                <span class="color-1 active"></span>
+                <span class="color-2"></span>
+                <span class="color-3"></span>
+                <span class="color-4"></span>
+                <span class="color-5"></span>
+            </div>
+        </div>
+
+        <!------------- BACKGROUND COLORS ------------------>
+        <div class="background">
+            <h4>Background</h4>
+            <div class="choose-bg">
+                <div class="bg-1 active">
+                    <span></span>
+                    <h5 for="bg-1">Light</h5>
+                </div>
+                <div class="bg-2">
+                    <span></span>
+                    <h5>Dim</h5>
+                </div>
+                <div class="bg-3">
+                    <span></span>
+                    <h5>Dark</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'js/index.js' %}"></script>
+
+</body>
+</html>
