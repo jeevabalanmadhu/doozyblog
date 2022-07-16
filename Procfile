@@ -1,0 +1,1 @@
+web: gunicorn doozywood.wsgi --log-file -
