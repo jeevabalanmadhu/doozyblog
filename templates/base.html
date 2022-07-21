@@ -1,3 +1,4 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -9,15 +10,40 @@
     <!-- ICONSOUT CDN-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
 
+       
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+        <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <!-- Medium Editor -->
+    <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css"
+    type="text/css" media="screen" charset="utf-8">
+  
+  
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <!-- <link rel="stylesheet" href="{% static '/css/main.css' %}"> -->
+
+    
 </head>
+
 <body>
     
     <nav>
         <div class="container">
-            <h2 class="log">
-                Doozywood
-            </h2>
+                <a href="/" >
+                    <h4 class="log">
+                        Doozywood
+                    </h4>
+                </a>
+            
             <div class="search-bar">
                 <i class="uil uil-search"></i>
                 <input type="search" placeholder="Search for films, talents, location, rents and contactss">
@@ -26,26 +52,47 @@
                 <div class="phone-icon">
                     
                 </div>
-                <a href="#" class="menu-item" >
+                <a href="#" class="menu-item" id="explore" >
                     <span><i class="uil uil-compass" ></i></span>
                 </a>
                 <a href="#" class="menu-item" id="theme" >
                     <span><i class="uil uil-palette" ></i></span>
                 </a>
-                <div class="create-btn">
-                    <label class="btn btn-primary" for="create-post">+</label>
+                <a href="/post/new" class="menu-item" >
+                    <span><i class="uil uil-plus-circle"></i></span>
+                </a>
+
+                {% if user.is_authenticated %}
+                <div class="profile-photo" >
+                    <a href="#" class="menu-item" id="profile" >
+                        <img src="{{ user.profile.image.url }}" >
+                    </a>
+                    
                 </div>
+                {% else %}
+                <a href="/login" class="menu-item" >
+                    <span><i class="uil uil-signin"></i></i></span>
+                </a>
+                {% endif %}
                 
-                <div class="profile-photo">
-                    <img src="{% static '/images/profile-1.jpg' %}" >
-                </div>
             </div>
         </div>
     </nav>
 
-    {% block content %}
+    <!------------------------MAIN--------------------->
+    <main>
+        
+        <div class="container">
+            
+            {% block content %}
 
-    {% endblock content %}
+            {% endblock content %}
+                
+        </div>
+    </main>
+    
+
+<!---========== THEME CUSTOMIZATION=======================-->
 
 <div class="customize-theme">
     <div class="card">
@@ -101,7 +148,53 @@
     </div>
 </div>
 
+
+<div class="profile-links">
+    <div class="card">
+
+    <div class="profile-button">
+       <a class="btn btn-outline-primary" href="/profile" role="button">Profile</a>
+       <a class="btn btn-outline-secondary" href="/logout" role="button">Logout</a>
+    </div>
+
+    </div>
+</div>
+
+<div class="explore-links">
+    <div class="card">
+        
+    <div class="profile-button">
+        <h2>Best short films</h2>
+       <a class="btn-link " href="/#" role="button">Best Indian Short films</a>
+       <a class="btn-link" href="/#" role="button">Best World Short films</a>
+       <a class="btn-link" href="/#" role="button">Best Silent Short films</a>
+       <a class="btn-link" href="/#" role="button">Award winning Short films</a>
+       <a class="btn-link" href="/#" role="button">Best Indian Short films</a>
+       <a class="btn-link" href="/#" role="button">Best Indian Short films</a>
+       <a class="btn-link" href="/#" role="button">Best Indian Short films</a>
+       <h2>Upcoming short film contest</h2>
+       <a class="btn-link " href="/#" role="button">Best Indian Short films</a>
+       <a class="btn-link" href="/#" role="button">Best World Short films</a>
+       <a class="btn-link" href="/#" role="button">Best Silent Short films</a>
+       <a class="btn-link" href="/#" role="button">Award winning Short films</a>
+       <a class="btn-link" href="/#" role="button">Best Indian Short films</a>
+       <a class="btn-link" href="/#" role="button">Best Indian Short films</a>
+       <a class="btn-link" href="/#" role="button">Best Indian Short films</a>
+       <h2>Check technicians near by</h2>
+       <a class="btn-link " href="/#" role="button">Best Indian Short films</a>
+       <a class="btn-link" href="/#" role="button">Best World Short films</a>
+       <a class="btn-link" href="/#" role="button">Best Silent Short films</a>
+       <a class="btn-link" href="/#" role="button">Award winning Short films</a>
+       <a class="btn-link" href="/#" role="button">Best Indian Short films</a>
+       <a class="btn-link" href="/#" role="button">Best Indian Short films</a>
+       <a class="btn-link" href="/#" role="button">Best Indian Short films</a>
+    </div>
+
+    </div>
+</div>
+
 <script src="{% static 'js/index.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
 
 </body>
 </html>

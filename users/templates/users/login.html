@@ -2,12 +2,15 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<main>
-        
-    <div class="container">
-        <!--===============================LEFT=========================--->
-        
+    <!--===============================LEFT=========================--->
+<div class="left">
+    
+</div>
+<!---------------------END OF LEFT----------------------->
+    <!--===============================MIDDLE=========================--->
+<div class="middle">
 
+        
     <div class="content-section">
         <form method="POST">
             {% csrf_token %}
@@ -29,7 +32,14 @@
         </div>
     </div>
 
-    </div>
+</div>
 
-</main>
+<!--===============================RIGHT=========================--->
+<div class="right">
+
+
+
+    
+</div>
+
 {% endblock content %}

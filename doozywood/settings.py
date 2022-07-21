@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'blog',
     'embed_video',
     'crispy_forms',
-    'users'
+    'users',
+    'rest_framework',
+    
 ]
 
 MIDDLEWARE = [
@@ -140,3 +142,6 @@ MEDIA_URL = '/media/'
 # Crispy Settings
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+LOGIN_REDIRECT_URL = '/'

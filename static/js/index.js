@@ -1,11 +1,6 @@
 //SIDEBAR
 const menuItems = document.querySelectorAll('.menu-item');
 
-//MESSAGES
-const messagesNotification = document.querySelector('#messages-notifications');
-const messages = document.querySelector('.messages');
-const message = messages.querySelectorAll('.message');
-const messageSearch = document.querySelector('#message-search')
 
 //THEME
 const theme = document.querySelector('#theme');
@@ -17,59 +12,14 @@ const Bg1 = document.querySelector('.bg-1');
 const Bg2 = document.querySelector('.bg-2');
 const Bg3 = document.querySelector('.bg-3');
 
+//PROFILE MENU
+const profile = document.querySelector('#profile');
+const profileModal = document.querySelector('.profile-links');
 
-//================SIDEBAR ================
+//Expore MENU
+const explore = document.querySelector('#explore');
+const exploreModal = document.querySelector('.explore-links');
 
-//remove active class  from all menu items
-const changeActiveItem = () => {
-    menuItems.forEach(item => {
-        item.classList.remove('active');
-    })
-}
-
-menuItems.forEach(item => {
-    item.addEventListener('click', () => {
-        changeActiveItem();
-        item.classList.add('active');
-        if(item.id != 'notifications') {
-            document.querySelector ('.notification-popup').
-            style.display = 'none';
-        } else{
-            document.querySelector('.notification-popup').
-            style.display = 'block';
-            document.querySelector('#notifications .notification-count').
-            style.display = 'none'
-        }
-    })
-})
-
-//========================== MESSAGES =================
-//Searces chats
-
-const searchMessage = () => {
-    const val = messageSearch.value.toLowerCase();
-    message.forEach(user => {
-        let name = user.querySelector('h5').textContent.toLowerCase();
-        if(name.indexOf(val) != -1) {
-            user.style.display = 'flex';
-        } else {
-            user.style.display = 'none';
-        }
-    })
-}
-
-//search chat
-messageSearch.addEventListener('keyup', searchMessage);
-
-//Highlight message box
-// messagesNotification.addEventListener('click', () => {
-//     messages.style.boxShadow = '0 0 1rem var(--color-primary)';
-//     messagesNotification.querySelector('.notification-count').style.display='none'
-//     setTimeout(() => {
-//         messages.style.boxShadow = 'none'
-//     }, 2000);
-
-// })
 
 
 
@@ -221,5 +171,51 @@ Bg3.addEventListener('click', () => {
     Bg2.classList.remove('active');
     changeBG();
 })
+
+//END
+
+
+
+
+// Profile links
+
+//opens model
+const openProfileModal = () => {
+    profileModal.style.display = 'grid';
+}
+
+const closeProfileModel = (e) => {
+    if(e.target.classList.contains('profile-links')) {
+        profileModal.style.display = 'none';
+    }
+}
+
+
+profile.addEventListener('click', openProfileModal);
+
+//closing the model
+profileModal.addEventListener('click', closeProfileModel);
+
+//END
+
+
+// Explore links
+
+//opens model
+const openExploreModal = () => {
+    exploreModal.style.display = 'grid';
+}
+
+const closeExploreModel = (e) => {
+    if(e.target.classList.contains('explore-links')) {
+        exploreModal.style.display = 'none';
+    }
+}
+
+
+explore.addEventListener('click', openExploreModal);
+
+//closing the model
+exploreModal.addEventListener('click', closeExploreModel);
 
 //END
