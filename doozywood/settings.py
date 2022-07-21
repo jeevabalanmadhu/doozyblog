@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'users',
     'rest_framework',
-    # 'social_django'
+    'social_django'
     # The following apps are required:
     
  
