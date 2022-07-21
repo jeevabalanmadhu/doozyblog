@@ -43,8 +43,13 @@ INSTALLED_APPS = [
     'crispy_forms',
     'users',
     'rest_framework',
+    # 'social_django'
+    # The following apps are required:
     
+ 
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -87,6 +92,19 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+AUTHENTICATION_BACKENDS = [
+    
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    
+    
+    # 'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.facebook.FacebookOAuth2',
+    
+]
 
 
 # Password validation
@@ -145,3 +163,11 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 LOGIN_REDIRECT_URL = '/'
+
+# SOCIAL_AUTH_URL_NAMESPACE = 'social'
+
+# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '500658364134-k4ashef0mu8ndiunk5ju4ehuek9ir2l3.apps.googleusercontent.com'
+# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '802383147596006'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'e33e72b391afc6ca2fffa4dde3f64d6a'

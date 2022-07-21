@@ -33,6 +33,7 @@ urlpatterns = [
         template_name='users/password_change.html'), name='password_change'),
     path('password-change/done/', auth_views.PasswordChangeDoneView.as_view(
         template_name='users/password_change_done.html'), name='password_change_done'),
+    path('', include('social_django.urls', namespace='social'))
 ]
 
 if settings.DEBUG:

@@ -10,6 +10,17 @@
     <!--===============================MIDDLE=========================--->
 <div class="middle">
 
+    <div class="social">
+        <ul>
+            <li class="facebook">
+                <a href="{% url "social:begin" "facebook" %}">Sign in with facebook</a>
+            </li>
+            <li class="google">
+                <a href="{% url "social:begin" "google-oauth2" %}">Sign in with google</a>
+            </li>
+        </ul>
+    </div>
+
         
     <div class="content-section">
         <form method="POST">
