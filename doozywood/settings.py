@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-bkbz1w*3r_15$%zb$*p!pw(0jhe!-6&(9sv%whrw$ns%j+!m)d'
+SECRET_KEY = '****'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -166,8 +166,8 @@ LOGIN_REDIRECT_URL = '/'
 
 # SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
-# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '500658364134-k4ashef0mu8ndiunk5ju4ehuek9ir2l3.apps.googleusercontent.com'
-# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '*****'
+# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '*****'
 
-SOCIAL_AUTH_FACEBOOK_KEY = '802383147596006'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'e33e72b391afc6ca2fffa4dde3f64d6a'
+SOCIAL_AUTH_FACEBOOK_KEY = '*****'
+SOCIAL_AUTH_FACEBOOK_SECRET = '*****'
